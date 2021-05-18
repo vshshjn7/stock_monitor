@@ -1,0 +1,2 @@
+Run UI using:
+python3 -m src.com.stock.monitor.main
