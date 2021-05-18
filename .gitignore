@@ -1,0 +1,198 @@
+.ipynb_checkpoints/
+/bazel-*
+/.bazelrc.tmp
+# Bazel IntelliJ project
+/.ijwb/
+node_modules/
+.repo.d
+.DS_Store
+GTAGS
+.idea
+hooks.pex
+GPATH
+GRTAGS
+GSYMS
+.pants.d
+.pants.workdir.file_lock
+.pants.workdir.file_lock.lock_message
+.pantsd.startup
+.statsdb.sqlite
+*.iml
+*.ipr
+*.iws
+*#
+.#*
+*~
+.pex
+.classpath
+.project
+.settings
+.temphome/
+_build/
+dist
+target
+.buildcache
+.hypothesis
+__pycache__/
+
+# These were only present in birdcage/.gitignore, but they seem reasonably applicable to both.
+*.sublime-workspace
+*.sublime-project
+sbt-launch.jar
+sbt-launch-0.7.4.jar
+/TAGS/
+.reviewboardrc
+.*.sw[a-z]
+.*~
+.classpath.txt
+.coverage
+.scala
+.worksheet
+project/boot
+project/plugins/project
+project/plugins/src_managed
+*.tmproj
+*.pex
+.cache
+.ensime
+.ensime.msg.counter
+.gcprof
+.ivy2
+.ivyjars
+.native
+.pids
+.run_classpath
+deploy_profile
+ensime_port
+git.properties
+server/deploy-cache
+
+# These were only present in science/.gitignore, but they seem reasonably applicable to both.
+.twkeys
+dot.twkeys
+*.swp
+.python
+htmlcov
+.pydevproject
+.coverage*
+*.hprof
+.build.properties
+.pants.stats
+.factorypath
+codegen/classes
+out
+scalding/data
+
+# science was already ignoring *.class files whereas birdcage wasn't. We
+# probably do want to ignore *.class files with the exception of certain
+# *.class files that both science and birdcage have added explicitly.
+*.class
+
+# Any new things that should be ignored by science, birdcage, etc. should
+# go here.
+
+# birdcage/codebrowser (http://go/code) makes use of sourcegraph, which puts
+# its analysis cache in the root of the repo, and we don't want that tracked
+/.srclib-cache
+/.srclib-store
+
+# Ignore scala worksheet files from IntelliJ.
+*.sc
+
+# Ignore scoverage output
+scoverageMeasurements/
+
+# Ignore pyright config settings
+pyrightconfig.json
+!*/**/pyrightconfig.json
+# Ignore python output files
+*.egg
+*.egg-info/
+*.py[cdo]
+__pythoncache__
+# TODO: https://github.com/pantsbuild/pants/issues/5448
+.pytest_cache
+.mypy_cache
+.pex
+*.whl
+# These are things that apply to birdcage that don't apply to science, etc.
+!/gizmoduck/config
+!/gizmoduck/src/main/scala/com/twitter/gizmoduck/config
+/.py/
+/bin/allocation.jar
+/bin/sbt-launch-0.7.5.jar
+/gosearch/src/main/resources/public/bower_components
+/iago/scripts
+/kestrel/lib
+
+.bundle
+lib_managed
+macaw/macaw
+macaw/run
+
+# Finatra log files
+/log.*
+/service-*
+
+# un-ignore service-discovery directory
+!service-discovery/
+
+# There are examples of these things in both science and birdcage that are
+# tracked in git. However, these lines were present in the .gitignore for
+# birdcage but not for science.
+*.log
+Gemfile.lock
+images
+
+# compressed files that should not be checked into the repo
+# if you disagree, please write to devprod@ and explain your use case
+*.jar
+*.zip
+*.gz
+
+# Ignore temp files created by search unit tests
+/tempindex/
+
+# Phabricator arcanist
+.phutil_module_cache
+
+# .Rproj.user are files created by R Studio when developgin R code. They should not be put into
+# version control. The R Studio IDE is very adamant about this line being
+# part of the global git repo's .gitignore file, even if the line is anyway present in
+# .gitignore files in relevant subdirectories. For that reason, we include this line
+# here instead of placing it in subdirectories of R code. For a discussion of this , see:
+# https://support.rstudio.com/hc/en-us/community/posts/200656996-Don-t-repeatedly-add-Rproj-user-to-gitignore
+.Rproj.user
+
+# Emacs user configs
+**/.dir-locals.el
+
+# Ignore custom Visual Studio Code configs
+*.vscode*
+.metals/
+.bloop
+
+/deepbird_libs/
+
+# Ignore files from Intellij Scala REPL plugin for Pants
+# https://plugins.jetbrains.com/plugin/10542-intellij-scala-repl-plugin-for-pants
+/repl-bundle/
+-Ycache-plugin-class-loader:last-modified
+
+# VCFS
+.vcfs/
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+
+.swiftpm
+
+# List of BUILD files in /3rdparty/jvm
+# We keep this list to register the dependency
+# between these files and the dependency resolution.
+# This list is updated automatically on every call to bazel.
+.3rdparty-jvm-builds.txt
+# List of BUILD files in /3rdparty/python
+.3rdparty-python-builds.txt
